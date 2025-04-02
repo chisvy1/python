@@ -3,7 +3,7 @@ import csv
 import json
 import os
 
-# Méthode 1 : Exécuter une requête GET à l'API DictionaryAPI et retourner les données dans un dictionnaire.
+# Méthode 1
 def get_word_definition(word):
     try:
         url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
@@ -16,7 +16,7 @@ def get_word_definition(word):
         print("Erreur lors de la requête HTTP :", e)
         return {}
 
-# Méthode 2 : Importer un fichier CSV, modifier son contenu et sauvegarder dans un nouveau CSV (sans écraser l'original).
+# Méthode 2 
 def modify_csv_file(input_csv, output_csv):
     try:
         with open(input_csv, mode="r", encoding="utf-8") as infile:
@@ -34,7 +34,7 @@ def modify_csv_file(input_csv, output_csv):
     except Exception as e:
         print("Erreur lors de la modification du CSV :", e)
 
-# Méthode 3 : Stocker le contenu d'un fichier texte dans un dictionnaire {1: "ligne 1", ...}.
+# Méthode 3
 def fichier_vers_dictionnaire(file_path):
     d = {}
     try:
@@ -46,7 +46,7 @@ def fichier_vers_dictionnaire(file_path):
         print("Erreur lors de la lecture du fichier texte :", e)
     return d
 
-# Méthode 4 : Afficher chaque élément du dictionnaire selon le format demandé.
+# Méthode 4 
 def print_dict_lines(d):
     try:
         for k, v in d.items():
@@ -54,7 +54,7 @@ def print_dict_lines(d):
     except Exception as e:
         print("Erreur lors de l'affichage :", e)
 
-# Méthode 5 : Exporter un dictionnaire dans un fichier JSON.
+# Méthode 5 
 def export_dict_to_json(data, output_json):
     try:
         os.makedirs(os.path.dirname(output_json), exist_ok=True)
@@ -64,7 +64,7 @@ def export_dict_to_json(data, output_json):
     except Exception as e:
         print("Erreur lors de l'export JSON :", e)
 
-# Méthode 6 : Exporter un dictionnaire dans un fichier CSV avec des noms de colonnes.
+# Méthode 6 
 def export_dict_to_csv(data, output_csv):
     try:
         os.makedirs(os.path.dirname(output_csv), exist_ok=True)
@@ -77,7 +77,6 @@ def export_dict_to_csv(data, output_csv):
     except Exception as e:
         print("Erreur lors de l'export CSV :", e)
 
-# Exemple d'utilisation
 if __name__ == "__main__":
     # Requête API : Afficher la définition d'un mot tapé par l'utilisateur.
     mot = input("Entrez un mot pour obtenir sa définition : ")

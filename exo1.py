@@ -1,4 +1,4 @@
-# Question 1 : Demander à l'utilisateur une adresse IPv4
+# Question 1 
 def demander_ip_v4():
     """
     Demande à l'utilisateur d'entrer une adresse IPv4.
@@ -7,7 +7,7 @@ def demander_ip_v4():
     ip = input("Veuillez entrer une adresse IPv4 : ")
     return ip
 
-# Question 2 : Vérifier si l'adresse IPv4 est valide
+# Question 2 
 def verifier_ip_v4(ip):
     """
     Vérifie si l'adresse IPv4 est valide.
@@ -29,7 +29,7 @@ def verifier_ip_v4(ip):
             
     return True
 
-# Question 3 : Vérifier si l'adresse IPv6 est valide
+# Question 3 
 def verifier_ip_v6(ip):
     """
     Vérifie si l'adresse IPv6 est valide.
@@ -51,7 +51,7 @@ def verifier_ip_v6(ip):
             
     return True
 
-# Question 4 : Détecter la version de l'adresse IP (IPv4 ou IPv6)
+# Question 4 
 def detecter_version_ip(ip):
     """
     Détecte si l'adresse est une IPv4 ou IPv6 et retourne la version.
@@ -64,7 +64,7 @@ def detecter_version_ip(ip):
     else:
         return 0  # Si l'adresse n'est ni IPv4 ni IPv6 valide, retourne 0
 
-# Question 5 : Vérifier une liste d'adresses IP (IPv4 ou IPv6)
+# Question 5 
 def verifier_liste_ips(liste_ips):
     """
     Vérifie une liste d'adresses IP et retourne une liste de tuples contenant
@@ -78,7 +78,7 @@ def verifier_liste_ips(liste_ips):
     
     return resultats
 
-# Question 6 : Vérifier un dictionnaire d'adresses IP
+# Question 6 
 def verifier_dictionnaire_ips(dictionnaire_ips):
     """
     Vérifie un dictionnaire d'adresses IP où les clés sont des hôtes
@@ -93,23 +93,21 @@ def verifier_dictionnaire_ips(dictionnaire_ips):
     return resultats
 
 
-# Exemple d'utilisation pour tester avec des entrées utilisateur
-
 if __name__ == "__main__":
-    # Question 1 : Demander à l'utilisateur de saisir une adresse IPv4 et la vérifier
+    # Question 1 
     ip_v4 = demander_ip_v4()  # Entrée de l'utilisateur pour IPv4
     if ip_v4:
         print(f"Adresse IPv4 entrée : {ip_v4}")
         print(f"Adresse IPv4 valide : {verifier_ip_v4(ip_v4)}")
     
-    # Question 2 : Demander à l'utilisateur de saisir une adresse IPv6
+    # Question 2 
     ip_v6 = input("Veuillez entrer une adresse IPv6 : ")  # Entrée de l'utilisateur pour IPv6
     if verifier_ip_v6(ip_v6):
         print(f"Adresse IPv6 valide : {ip_v6}")
     else:
         print("Adresse IPv6 invalide.")
     
-    # Question 3 : Demander à l'utilisateur de tester la détection de la version IP
+    # Question 3 
     ip = input("Entrez une adresse IP (IPv4 ou IPv6) pour détecter sa version : ")
     version = detecter_version_ip(ip)
     if version == 4:
@@ -119,7 +117,7 @@ if __name__ == "__main__":
     else:
         print(f"{ip} est invalide.")
     
-    # Question 4 : Test avec une liste d'adresses IP
+    # Question 4 
     print("\nTest avec une liste d'adresses IP :")
     liste_ips = []
     n = int(input("Combien d'adresses IP voulez-vous entrer ? "))
@@ -129,7 +127,7 @@ if __name__ == "__main__":
     resultats = verifier_liste_ips(liste_ips)
     print("Résultats pour la liste d'adresses IP :", resultats)
 
-    # Question 5 : Test avec un dictionnaire d'adresses IP
+    # Question 5 
     print("\nTest avec un dictionnaire d'adresses IP :")
     dictionnaire_ips = {}
     n = int(input("Combien d'entrées voulez-vous ajouter dans le dictionnaire ? "))

@@ -3,7 +3,6 @@ import shutil
 from datetime import datetime
 import sys
 
-# 1. Lister le contenu du dossier et créer une copie du fichier avec la date et l'heure dans le nom
 def lister_contenu_et_copier_fichier(dossier_travail, fichier_a_copier):
     # Lister le contenu du dossier
     print(f"Contenu du dossier {dossier_travail}:")
@@ -23,7 +22,7 @@ def lister_contenu_et_copier_fichier(dossier_travail, fichier_a_copier):
     else:
         print(f"Le fichier {fichier_a_copier} n'existe pas dans le dossier {dossier_travail}.")
 
-# 2. Compter le nombre de fichiers dans un dossier de travail
+
 def compter_fichiers(dossier_travail):
     compteur = 0
     # Vérifier que le dossier existe
@@ -53,20 +52,14 @@ def compter_fichiers_arg(dossier_travail):
     else:
         print(f"Le dossier {dossier_travail} n'existe pas ou n'est pas accessible.")
 
-# Fonction principale pour exécuter selon les besoins
+
 if __name__ == "__main__":
-    # Exemple d'utilisation de lister_contenu_et_copier_fichier
-    # Lister le contenu du dossier et copier un fichier avec la date et l'heure
     dossier_travail = "./"  # Utiliser le dossier de travail actuel
     fichier_a_copier = "example.txt"  # Nom du fichier à copier
     lister_contenu_et_copier_fichier(dossier_travail, fichier_a_copier)
 
-    # Exemple d'utilisation de compter_fichiers
-    # Compter les fichiers dans le dossier de travail
     compter_fichiers(dossier_travail)
 
-    # Exemple d'utilisation de compter_fichiers_arg
-    # Vérifier si un chemin est passé en argument
     if len(sys.argv) > 1:
         chemin_dossier = sys.argv[1]
         compter_fichiers_arg(chemin_dossier)
