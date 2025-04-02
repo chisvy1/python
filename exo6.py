@@ -47,13 +47,13 @@ class SystemMonitor:
 if __name__ == "__main__":
     monitor = SystemMonitor()
 
-    # Exécution Question 1
+    #  Question 1
     monitor.export_system_info("system_info.json")
 
-    # Exécution Question 2
+    #  Question 2
     monitor.export_all_processes("processes_info.json")
 
-    # Exécution Question 3
+    #  Question 3
     high_mem = monitor.get_high_memory_processes(threshold=2.0)
     print("Processus consommant plus de 2% de RAM :")
     for proc in high_mem:
