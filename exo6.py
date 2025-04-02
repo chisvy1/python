@@ -11,7 +11,7 @@ class SystemMonitor:
         info = {
             "OS": platform.system(),
             "version": platform.version(),
-            "RAM": psutil.virtual_memory()._asdict()  # Utilisation de _asdict() pour obtenir un dictionnaire complet
+            "RAM": psutil.virtual_memory()._asdict()  # Utilisation de _asdict() pour obtenir un dico complet
         }
         return info
 
@@ -20,7 +20,6 @@ class SystemMonitor:
         with open(file_path, "w") as f:
             json.dump(info, f, indent=4)
 
-    # Question 2 : Lire TOUTES les informations de tous les processus de votre ordinateur et les stocker dans un fichier JSON.
     def get_all_processes(self):
         process_list = []
         for proc in psutil.process_iter(['pid', 'name', 'username', 'cpu_percent', 'memory_percent']):
@@ -35,7 +34,6 @@ class SystemMonitor:
         with open(file_path, "w") as f:
             json.dump(processes, f, indent=4)
 
-    # Question 3 : Afficher les processus qui consomment plus de 2% de votre RAM.
     def get_high_memory_processes(self, threshold=2.0):
         processes = self.get_all_processes()
         high_memory = [proc for proc in processes if proc.get('memory_percent', 0) > threshold]
@@ -62,5 +60,3 @@ if __name__ == "__main__":
         print(proc)
     monitor.export_high_memory_processes(threshold=2.0, file_path="high_memory_processes.json")
 
-    # Question 4 : Le code a été testé sur plusieurs OS (par exemple Windows et Linux).
-    # Veillez à ce que psutil soit installé et compatible avec votre OS.
