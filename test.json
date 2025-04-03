@@ -1,0 +1,5 @@
+[
+    {"id": 1, "boolean": "Yes", "url": "http://reddit.com"},
+    {"id": 2, "boolean": "No", "url": "http://example.com"},
+    {"id": 3, "boolean": "Yes", "url": "http://reddit.com/some_page"}
+  ]
